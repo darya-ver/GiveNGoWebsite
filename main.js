@@ -19,112 +19,93 @@ function check(){
 	var disabilities = document.quiz.disabilities.value;
 	var politics = document.quiz.politics.value;
 	var race = document.quiz.race.value;
-	var seniors = document.quiz.seniors.value;
+	var mental_health = document.quiz.mental_health.value;
 	var sports = document.quiz.sports.value;
 	var military = document.quiz.military.value;
 	var women = document.quiz.women.value;
-
-
+        var obesity = document.quiz.obesity.value;
+        var affordable_healthcare = document.quiz.affordable_healthcare.value;
+        var oil_spills = document.quiz.oil_spills.value;
 
 	var numYes = 0;
-
+        var hum_rights = 0;
+        var environment = 0;
+        var health_medicine = 0;
 
 	if (humanRights == "Yes") {
-		numYes++;
+		hum_rights++;
 	}
 	if (animals == "Yes") {
-		numYes++;
+		environment++;
 	}
-	if (arts == "Yes") {
-		numYes++;
+	if (recycle == "Yes") {
+		environment++;
 	}
 	if (youth == "Yes") {
-		numYes++;
+		hum_rights++;
 	}
 	if (community == "Yes") {
-		numYes++;
+		environment++;
 	}
 	if (technology == "Yes") {
-		numYes++;
-	}
+		health_medicine++
+        }
+        if (affordable_healthcare == "Yes") {
+                health_medicine++
+        } 
 	if (crisisSupport == "Yes") {
-		numYes++;
+		environment++;
 	}
 	if (food == "Yes") {
-		numYes++;
+		hum_rights++;
 	}
 	if (sustainability == "Yes") {
-		numYes++;
+		environment++;
 	}
 	if (faithBased == "Yes") {
-		numYes++;
+		hum_rights++;
 	}
 	if (health == "Yes") {
-		numYes++;
+		health_medicine++;
 	}
 	if (homelessness == "Yes") {
-		numYes++;
+		hum_rights++;
 	}
 	if (hunger == "Yes") {
-		numYes++;
+		hum_rights++;
 	}
 	if (immigrants == "Yes") {
-		numYes++;
+		hum_rights++;
 	}
-	if (international == "Yes") {
-		numYes++;
-	}
-	if (lgbt == "Yes") {
-		numYes++;
-	}
-	if (disabilities == "Yes") {
-		numYes++;
-	}
-	if (politics == "Yes") {
-		numYes++;
-	}
-	if (race == "Yes") {
-		numYes++;
-	}
-	if (seniors == "Yes") {
-		numYes++;
+	if (mental_health == "Yes") {
+		hum_rights++;
 	}
 	if (sports == "Yes") {
-		numYes++;
+		health_medicine++;
 	}
-	if (military == "Yes") {
-		numYes++;
-	}
+        if (obesity == "Yes) {
+                health_medicine++;
+        }
 	if (women == "Yes") {
-		numYes++;
+		hum_rights++;
 	}
+        if(oil_spills == "Yes") {
+                environment++;
+        }
 
-// 	if (question2 == "Hartford") {
-// 		correct++;
-// }
-// 	if (question3 == "Albany") {
-// 		correct++;
-// 	}
+ 	if (hum_rights >= health_medicine && hum >= environment) {
+                document.getElementById("message").innerHTML = "Check out our Human Rights Volunteering Opportunities";        
+        }
+ 	if (health_medicine >= hum_rights && health_medicine >= environment) {
+                document.getElementById("message").innerHTML = "Check out our Health & Medicene Volunteering Opportunities";
+ 	}
+        if (environment >= health_medicine && environment >= hum_rights) {
+                document.getElementById("message").innerHTML = "Check out our Environment Volunteering Opportunities";
+        }
+        else {
+                document.getElementById("message").innerHTML = "Check out our Human Rights Volunteering Opportunities";
+        }
+         
 
-	// var pictures = ["img/win.gif", "img/meh.jpeg", "img/lose.gif"];
-	// var messages = ["Great job!", "That's just okay", "You really need to do better"];
-	// var score;
 
-	// if (correct == 0) {
-	// 	score = 2;
-	// }
-	//
-	// if (correct > 0 && correct < 3) {
-	// 	score = 1;
-	// }
-	//
-	// if (correct == 3) {
-	// 	score = 0;
-	// }
-
-	document.getElementById("after_submit").style.visibility = "visible";
-
-	document.getElementById("message").innerHTML = "Wow!";
-	document.getElementById("number_correct").innerHTML = "you answered this many with \"yes\": " + numYes;
-	// document.getElementById("picture").src = pictures[score];
 	}
