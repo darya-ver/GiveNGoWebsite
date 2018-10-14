@@ -26,7 +26,8 @@ function check(){
         var obesity = document.quiz.obesity.value;
         var affordable_healthcare = document.quiz.affordable_healthcare.value;
         var oil_spills = document.quiz.oil_spills.value;
-
+        var recycle = document.quiz.recycle.value;  
+      
 	var numYes = 0;
         var hum_rights = 0;
         var environment = 0;
